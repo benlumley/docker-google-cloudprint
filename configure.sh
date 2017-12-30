@@ -23,7 +23,7 @@ help|-h) echo "$usage"
 -o|open) sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf
    getent passwd $CUPS_USER_ADMIN > /dev/null
    if [ ! $? -eq 0 ]; then
-       adduser $CUPS_USER_ADMIN -S -H
+       adduser $CUPS_USER_ADMIN --system --no-create-home
    fi
    addgroup $CUPS_USER_ADMIN lpadmin
    addgroup $CUPS_USER_ADMIN root
@@ -37,7 +37,7 @@ help|-h) echo "$usage"
    pkill -f cupsd
    ;;
 -u|update)
-    apk add cups cups-dev cups-filters --update
+    export DEBIAN_FRONTEND noninteractive && apt update && apt upgrade -y
     pip install cloudprint[daemon] -U
   ;;
 -s|save)
