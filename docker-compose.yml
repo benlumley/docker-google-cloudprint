@@ -1,0 +1,24 @@
+version: "3.4"
+services:
+  cloudprint:
+    container_name: cloudprint
+    image: google-cloudprint:debian
+    environment:
+      - CUPS_USER_ADMIN=foo
+      - CUPS_USER_PASSWORD=guguseli
+    privileged: true
+    ports:
+      - 631:631
+    networks:
+      - cloudprint
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - data-root:/root:rw
+      - data-etc-cups:/etc/cups:rw
+
+networks:
+  cloudprint:
+
+volumes:
+  data-root:
+  data-etc-cups:
