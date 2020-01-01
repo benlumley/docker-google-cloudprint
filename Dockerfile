@@ -7,6 +7,8 @@ RUN export DEBIAN_FRONTEND noninteractive && apt update && \
     apt install -y --no-install-recommends vim git etckeeper && \
     apt install -y --no-install-recommends cups a2ps printer-driver-gutenprint foomatic-db openprinting-ppds fonts-linuxlibertine && \
     apt install -y --no-install-recommends curl python-pip python-cups python-setuptools python-wheel && \
+    python -m ensurepip --default-pip && \
+    pip install --upgrade pip &&\
     pip install cloudprint[daemon] && \
     sed -r -i 's/(Order allow\,deny)/\1\n  Allow all/' /etc/cups/cupsd.conf && \
     printf "DefaultEncryption Never\nServerAlias *\n" >> /etc/cups/cupsd.conf && \

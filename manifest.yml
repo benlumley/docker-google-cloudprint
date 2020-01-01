@@ -9,21 +9,10 @@ manifests:
   -
     image: jaymoulin/google-cloudprint:$VERSION-arm64v8
     platform:
-      architecture: arm
-      variant: v8
+      architecture: arm64
       os: linux
   -
     image: jaymoulin/google-cloudprint:$VERSION-amd64
     platform:
       architecture: amd64
-      os: linux
-  -
-    image: jaymoulin/google-cloudprint:$VERSION-i386
-    platform:
-      architecture: 386
-      os: linux
-  -
-    image: jaymoulin/google-cloudprint:$VERSION-s390x
-    platform:
-      architecture: s390x
       os: linux
