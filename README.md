@@ -4,7 +4,11 @@ It'll probably work for other printers with 32bit drivers, if they are available
 
 ![logo](logo.png "Google Cloudprint - Docker Image")
 
-Google Cloudprint - Docker Image (Multiarch)
+Original Readme Follows - All still valid, except no longer multiarch
+=====================================================================
+
+
+Google Cloudprint - Docker Image ~~(Multiarch)~~
 ============================================
 
 [![latest release](https://img.shields.io/github/release/jaymoulin/docker-google-cloudprint.svg "latest release")](http://github.com/jaymoulin/docker-google-cloudprint/releases)
